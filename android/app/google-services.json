@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "616574082543",
+    "project_id": "nomadneg-9ea1f",
+    "storage_bucket": "nomadneg-9ea1f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616574082543:android:f5739c8ebe5ec3c824aa1a",
+        "android_client_info": {
+          "package_name": "com.example.my_first_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCJ0dW_eBWNLy-vHSfrmsYEfaUscWzIbA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
