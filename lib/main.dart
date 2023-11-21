@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_first_app/home/main_table_page.dart';
 
 void main() {
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'My First App',
       theme: ThemeData(primarySwatch: Colors.blue),
@@ -18,4 +19,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
- 

@@ -1,6 +1,9 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:my_first_app/home/table_page_body.dart';
 import 'package:my_first_app/utils/colors.dart';
+import 'package:my_first_app/utils/dimensions.dart';
 import 'package:my_first_app/widgets/big_text.dart';
 import 'package:my_first_app/widgets/small_text.dart';
 
@@ -20,8 +23,10 @@ class _MainTablePageState extends State<MainTablePage> {
           // showing the header
           Container(
             child: Container(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              margin: const EdgeInsets.only(top: 60, bottom: 15),
+              padding: EdgeInsets.only(
+                  left: Dimensions.width20, right: Dimensions.width20),
+              margin: EdgeInsets.only(
+                  top: Dimensions.height60, bottom: Dimensions.height15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -41,10 +46,11 @@ class _MainTablePageState extends State<MainTablePage> {
                   ),
                   Center(
                     child: Container(
-                      width: 45,
-                      height: 45,
+                      width: Dimensions.height45,
+                      height: Dimensions.height45,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius:
+                              BorderRadius.circular(Dimensions.radius15),
                           color: Colors.amber),
                       child: const Icon(
                         Icons.search,

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:my_first_app/utils/colors.dart';
+import 'package:my_first_app/utils/dimensions.dart';
 import 'package:my_first_app/widgets/big_text.dart';
 import 'package:my_first_app/widgets/icon_and_text.dart';
 import 'package:my_first_app/widgets/small_text.dart';
@@ -19,7 +20,7 @@ class _TablePageBodyState extends State<TablePageBody> {
   PageController pageController = PageController(viewportFraction: 0.85);
   var _currPageValue = 0.0;
   final double _scaleFactor = 0.8;
-  final double _height = 220;
+  final double _height = Dimensions.pageViewContainer;
   @override
   void initState() {
     super.initState();
@@ -41,7 +42,7 @@ class _TablePageBodyState extends State<TablePageBody> {
     return Column(
       children: [
         Container(
-          height: 320,
+          height: Dimensions.pageView,
           child: PageView.builder(
               controller: pageController,
               itemCount: 5,
@@ -100,10 +101,11 @@ class _TablePageBodyState extends State<TablePageBody> {
       child: Stack(
         children: [
           Container(
-            height: 220,
-            margin: const EdgeInsets.only(left: 10, right: 10),
+            height: Dimensions.pageViewContainer,
+            margin: EdgeInsets.only(
+                left: Dimensions.width10, right: Dimensions.width10),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(Dimensions.radius30),
               color: index.isEven ? Colors.blue : Colors.purple,
               image: const DecorationImage(
                 fit: BoxFit.cover,
@@ -116,10 +118,13 @@ class _TablePageBodyState extends State<TablePageBody> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 120,
-              margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
+              height: Dimensions.pageViewTextContainer,
+              margin: EdgeInsets.only(
+                  left: Dimensions.width30,
+                  right: Dimensions.width30,
+                  bottom: Dimensions.height30),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
                 color: Colors.white,
                 boxShadow: const [
                   BoxShadow(
@@ -134,12 +139,13 @@ class _TablePageBodyState extends State<TablePageBody> {
                 ],
               ),
               child: Container(
-                padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
+                padding: EdgeInsets.only(
+                    top: Dimensions.height15, left: 15, right: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     BigText(text: 'Rainbow'),
-                    const Gap(10),
+                    Gap(Dimensions.height10),
                     Row(
                       children: [
                         Wrap(
@@ -160,7 +166,7 @@ class _TablePageBodyState extends State<TablePageBody> {
                         SmallText(text: 'comments'),
                       ],
                     ),
-                    const Gap(20),
+                    Gap(Dimensions.height15),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -169,20 +175,18 @@ class _TablePageBodyState extends State<TablePageBody> {
                           icon: Icons.circle_sharp,
                           iconColor: AppColors.iconColor1,
                         ),
-                        Gap(10),
                         IconAndText(
                           text: '1.7km',
                           icon: Icons.location_pin,
                           iconColor: AppColors.iconColor2,
                         ),
-                        Gap(10),
                         IconAndText(
                           text: '32min',
                           icon: Icons.access_time_rounded,
                           iconColor: Colors.red,
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
