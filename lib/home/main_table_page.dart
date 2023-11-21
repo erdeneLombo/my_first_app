@@ -17,6 +17,7 @@ class _MainTablePageState extends State<MainTablePage> {
     return Scaffold(
       body: Column(
         children: [
+          // showing the header
           Container(
             child: Container(
               padding: const EdgeInsets.only(left: 20, right: 20),
@@ -55,6 +56,7 @@ class _MainTablePageState extends State<MainTablePage> {
               ),
             ),
           ),
+          // showing the body
           const TablePageBody(),
         ],
       ),
