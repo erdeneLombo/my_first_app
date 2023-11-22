@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
-import 'package:my_first_app/home/table_page_body.dart';
+import 'package:my_first_app/pages/home/table_page_body.dart';
 import 'package:my_first_app/utils/colors.dart';
 import 'package:my_first_app/utils/dimensions.dart';
 import 'package:my_first_app/widgets/big_text.dart';
@@ -20,7 +20,7 @@ class _MainTablePageState extends State<MainTablePage> {
     return Scaffold(
       body: Column(
         children: [
-          // showing the header
+          //! H E A D E R
           Container(
             child: Container(
               padding: EdgeInsets.only(
@@ -52,9 +52,10 @@ class _MainTablePageState extends State<MainTablePage> {
                           borderRadius:
                               BorderRadius.circular(Dimensions.radius15),
                           color: Colors.amber),
-                      child: const Icon(
+                      child: Icon(
                         Icons.search,
                         color: Colors.white,
+                        size: Dimensions.iconSize24,
                       ),
                     ),
                   ),
@@ -62,8 +63,12 @@ class _MainTablePageState extends State<MainTablePage> {
               ),
             ),
           ),
-          // showing the body
-          const TablePageBody(),
+          //! B O D Y
+          const Expanded(
+            child: SingleChildScrollView(
+              child: TablePageBody(),
+            ),
+          ),
         ],
       ),
     );
